@@ -1,5 +1,7 @@
 <?php
 
+use App\Modules\Inscripcion\Models\RegistroUsuariosModel;
+
 Route::filter('csrf_url', function($route, $request, $segmento) {
 
     if (Session::token() != Request::segment($segmento)) {
@@ -29,9 +31,20 @@ Route::get('getTiposIdentificacion', function() {
     ));
 });
 Route::get('getServicios', function() {
-    $servicios = DB::table("servicios")->get();
+    $servicios = DB::table("servicios")->orderBy('descripcion', 'asc')->get();
 
     return Response::json(array(
                 "servicios" => $servicios
+    ));
+});
+
+
+Route::get('getViewContadorUsuarios', array('uses' => 'App\Modules\Inscripcion\Controllers\InscripcionController@getContUsuarios'));
+
+
+Route::get('getContUsuarios', function() {
+    $count = RegistroUsuariosModel::all()->count();
+    return Response::json(array(
+                "cont" => $count
     ));
 });

@@ -6,8 +6,7 @@
     </div> 
 
 
-    <a href="#/inscripcion" class="btn btn-default">
-        Inscribirse
-    </a>
-
+    <h2>
+        usuarios registrados {{cont}}
+    </h2>
 </div>

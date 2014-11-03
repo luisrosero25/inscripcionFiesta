@@ -3,7 +3,8 @@
 namespace App\Modules\Inscripcion\Controllers;
 
 use View,
-    App\Modules\Inscripcion\Models\RegistroUsuariosModel;
+    App\Modules\Inscripcion\Models\RegistroUsuariosModel,
+        Illuminate\Support\Facades\Response;
 
 class InscripcionController extends \BaseController {
 
@@ -43,15 +44,17 @@ class InscripcionController extends \BaseController {
 
         if ($this->usuarioExiste($request->id_tipo_identificacion->id, $request->numero_identificacion)) {
             if ($usuario->save() == 1) {
-                echo json_encode(array('res' => 'true', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->segundo_nombre . ' ' . $request->primer_apellido . '</strong>, registrado correctamente',
-                    'type' => 'success'));
+                return Response::json(array('res' => 'true', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->segundo_nombre . ' ' . $request->primer_apellido . '</strong>, registrado correctamente',
+                            'type' => 'success'));
             } else {
-                echo json_encode(array('res' => 'false', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->segundo_nombre . ' ' . $request->primer_apellido . '</strong>, Imposible realizar esta accion, vuelva a intentarlo mas tarde',
-                    'type' => 'danger'));
+                return Response::json(array('res' => 'false', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->segundo_nombre . ' ' . $request->primer_apellido . '</strong>, Imposible realizar esta accion, vuelva a intentarlo mas tarde',
+                            'type' => 'danger'));
             }
         } else {
-            echo json_encode(array('res' => 'false', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->segundo_nombre . ' ' . $request->primer_apellido . '</strong>, El usuario que esta intentando registrar, ya existe',
-                'type' => 'warning'));
+
+
+            return Response::json(array('res' => 'false', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->segundo_nombre . ' ' . $request->primer_apellido . '</strong>, El usuario que esta intentando registrar, ya existe',
+                        'type' => 'warning'));
         }
     }
 
@@ -64,6 +67,11 @@ class InscripcionController extends \BaseController {
         } else {
             return TRUE;
         }
+    }
+
+    public function getContUsuarios() {
+       
+            return View::make('inscripcion::contarRegistrados');
     }
 
 }
