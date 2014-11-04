@@ -38,7 +38,7 @@
                         active: isActive('/inicio')
                     }" href="#/inicio" style="border-top: 1px solid #258ecd"><span class="glyphicon glyphicon-home"></span> Inicio </a>
             <a ng-class="{
-                        active: isActive('/inscripcion')
+                        active: isActive('/')
                     }" href="#/inscripcion"><span class="glyphicon glyphicon-edit"></span> Formulario Inscripcion </a>
             <a ng-class="{
                         active: isActive('/cont')

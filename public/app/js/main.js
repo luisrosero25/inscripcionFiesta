@@ -19,14 +19,12 @@ miApp.config(function($routeProvider) {
                 templateUrl: 'bienvenido/' + _token,
                 controller: 'homeController'
             })
-            .when('/inscripcion', {
-                templateUrl: 'inscripcion/' + _token,
-                controller: 'inscripcionController'
-            })
             .when('/cont', {
                 templateUrl: 'getViewContadorUsuarios',
                 controller: 'contadorController'
-            });
+            }).otherwise({
+        redirectTo: '/'
+      });
 
 
 });
