@@ -2,7 +2,7 @@
 <html lang="en" ng-app="miApp">
 
     <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Inscripcion Fiesta 2014 - Clinica Colombia</title>
 
         <link href="<?php echo asset('/lib/bt3/css/bootstrap.min.css') ?>" rel="stylesheet">

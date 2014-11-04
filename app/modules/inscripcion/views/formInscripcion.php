@@ -73,7 +73,10 @@
                 <label for="email">*Correo Electronico</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Digita tu correo electronico" ng-model="usuario.email" required>
             </div>
-            <button type="submit" class="btn btn-default" ng-disabled="forma.$invalid">Registrarse</button>
+            <p class="text-center">
+                <button type="submit" class="btn btn-success" ng-disabled="forma.$invalid">Registrarse</button>
+
+            </p>
         </fieldset>
 
     </form>
