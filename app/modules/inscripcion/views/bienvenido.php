@@ -2,7 +2,7 @@
 
 
     <div class="page-header">
-        <h3><span class="glyphicon glyphicon-th-list"></span> {{title}} </h3>
+        <h3><span class="glyphicon glyphicon-home"></span> {{title}} </h3>
     </div> 
 
  <p class="text-center">

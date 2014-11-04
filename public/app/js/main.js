@@ -12,6 +12,10 @@ miApp.config(function($routeProvider) {
 
     $routeProvider
             .when('/', {
+                templateUrl: 'inscripcion/' + _token,
+                controller: 'inscripcionController'
+            })
+             .when('/inicio', {
                 templateUrl: 'bienvenido/' + _token,
                 controller: 'homeController'
             })
@@ -116,8 +120,8 @@ miApp.controller('inscripcionController', function($scope, $location, $http) {
         $('.content').prepend(
                 '<div class="alert alert-' + res.type + ' alert-dismissible fade in" role="alert">' +
                 '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>' +
-                ' <strong>' + titulo_alerta + '</strong> ' + res.msj +
-                '</div>'
+                ' <p class="text-center"><strong>' + titulo_alerta + '</strong> ' + res.msj +
+                '</p></div>'
                 );
     };
 

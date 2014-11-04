@@ -2,7 +2,7 @@
 
 
     <div class="page-header">
-        <h3><span class="glyphicon glyphicon-th-list"></span> {{title}} </h3>
+        <h3><span class="glyphicon glyphicon-calendar"></span> {{title}} </h3>
     </div> 
 
 

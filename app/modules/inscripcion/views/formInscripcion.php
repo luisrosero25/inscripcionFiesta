@@ -2,7 +2,7 @@
 
 
     <div class="page-header">
-        <h3><span class="glyphicon glyphicon-th-list"></span> {{title}} </h3>
+        <h3><span class="glyphicon glyphicon-edit"></span> {{title}} </h3>
     </div> 
 
     <form ng-submit="guardarInscripcion()" role="form" name="forma"class="row">
