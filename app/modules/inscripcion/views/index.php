@@ -3,7 +3,7 @@
 
     <head>
 
-
+        <title>Inscripcion Fiesta 2014 - Clinica Colombia</title>
 
         <link href="<?php echo asset('/lib/bt3/css/bootstrap.min.css') ?>" rel="stylesheet">
         <link href="<?php echo asset('/lib/bt3/css/sandstone.css') ?>" rel="stylesheet">

@@ -37,7 +37,7 @@
 
             <div class="form-group col-lg-6" ng-class="{'has-error': forma.numero_identificacion.$invalid, 'has-success': forma.numero_identificacion.$valid}">
                 <label for="numero_identificacion">*Numero Identificacion</label>
-                <input type="text" class="form-control" id="numero_identificacion" name="numero_identificacion" placeholder="Digita tu numero de identificacion"  ng-model="usuario.numero_identificacion" required>
+                <input type="number" class="form-control" id="numero_identificacion" name="numero_identificacion" placeholder="Digita tu numero de identificacion"  ng-model="usuario.numero_identificacion" required>
             </div>
 
 
@@ -57,11 +57,11 @@
 
             <div class="form-group col-lg-6" ng-class="{'has-error': forma.celular.$invalid, 'has-success': forma.celular.$valid}">
                 <label for="celular">*Celular</label>
-                <input type="text" class="form-control" id="celular" name="celular" placeholder="Digita tu numero de Celular" ng-model="usuario.celular" required>
+                <input type="number" class="form-control" id="celular" name="celular" placeholder="Digita tu numero de Celular" ng-model="usuario.celular" required>
             </div>
             <div class="form-group col-lg-6">
                 <label for="telefono">Celular 2 (opcional)</label>
-                <input type="text" class="form-control" name="telefono" id="telefono" ng-model="usuario.telefono" placeholder="Digita un segundo numero de celular">
+                <input type="number" class="form-control" name="telefono" id="telefono" ng-model="usuario.telefono" placeholder="Digita un segundo numero de celular">
             </div>
 
             <div class="form-group col-lg-6" ng-class="{'has-error': forma.cargo.$invalid, 'has-success': forma.cargo.$valid}">
