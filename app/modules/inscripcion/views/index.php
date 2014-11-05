@@ -66,7 +66,7 @@
 
         </div>
         <footer style="position: relative; float: bottom;color: #D7D7D7">
-            <p class="text-center">Desarrollado por: <strong>Luis Edier Rosero</strong></p>
+            <p class="text-center"><small>Desarrollado por: <strong>Luis Edier Rosero</strong></small><br>Copyright © 2014 Luis Edier Rosero. Todos los derechos reservados.</p>
         </footer>
         <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
         <script src="<?php echo asset('t1/js/classie.js') ?>"></script>
