@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Inscripcion Fiesta 2014 - Clinica Colombia</title>
-  
+        <link rel="shortcut icon" href="<?php echo asset('favicon.ico') ?>">
 
         <!--<link rel="stylesheet" type="text/css" href="<?php echo asset('t1/css/default.css') ?>" />-->
         <link rel="stylesheet" type="text/css" href="<?php echo asset('t1/css/component.css') ?>" />
@@ -22,6 +22,11 @@
                 border-bottom-left-radius: 8px;
                 border-bottom-right-radius: 8px;
                 box-shadow: 6px 13px 62px 1px;
+            }
+
+            .inscripcion:hover{
+
+                background: black;
             }
         </style>
 
@@ -43,7 +48,9 @@
             <a ng-class="{
                         active: isActive('/cont')
                     }" href="#/cont"><span class="glyphicon glyphicon-calendar"></span> Total Registrados </a>
-
+            <a ng-class="{
+                        active: isActive('/cancelar')
+                    }" href="#/cancelar"><span class="glyphicon glyphicon-remove"></span> Cancelar Inscripcion </a>
         </nav>
 
 

@@ -48,3 +48,20 @@ Route::get('getContUsuarios', function() {
                 "cont" => $count
     ));
 });
+
+
+Route::get('mail', function() {
+
+    Mail::send('inscripcion::confirmacionRegistroMail', array('primer_nombre' => 'prueba', 'primer_apellido' => 'prueba'), function($message) {
+        $message->to('luisedier.rosero@gmail.com', 'Jon Doe')->subject('Clinica Colombia ES - Inscripcion Fiesta 2014');
+    });
+});
+
+Route::get('getViewCancelar',function(){
+    return View::make('inscripcion::formCancelacion');
+});
+
+Route::post('solicitarCancelacion',  array('uses' => 'App\Modules\Inscripcion\Controllers\InscripcionController@solicitarCancelacion'));
+
+Route::get('cancelar/{token}',  array('uses' => 'App\Modules\Inscripcion\Controllers\InscripcionController@cancelarInscripcion'));
+
