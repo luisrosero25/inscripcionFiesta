@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Inscripcion Fiesta 2014 - Clinica Colombia</title>
+        <title>Admin Inscripcion Fiesta 2014 - Clinica Colombia</title>
         <link rel="shortcut icon" href="<?php echo asset('favicon.ico') ?>">
 
         <!--<link rel="stylesheet" type="text/css" href="<?php echo asset('t1/css/default.css') ?>" />-->
@@ -14,6 +14,9 @@
         <!--<link href="<?php echo asset('/lib/bt3/css/flatly.css') ?>" rel="stylesheet">-->
         <!--<link href="<?php echo asset('/lib/bt3/css/darkly.css') ?>" rel="stylesheet">-->
         <!--<link href="<?php echo asset('/lib/bt3/css/journal.css') ?>" rel="stylesheet">-->
+        
+        <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+      
         <style>
             .content .container{
 
@@ -28,6 +31,13 @@
 
                 background: black;
             }
+            
+            /*style.css*/
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 100%; 
+    height: 400px
+}
         </style>
 
 
@@ -37,7 +47,7 @@
         <script src="<?php echo asset('t1/js/modernizr.custom.js') ?>"></script>
     </head>
     <body class="cbp-spmenu-push">
-        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left cbp-spmenu-open" id="cbp-spmenu-s1" ng-controller="activeController">
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1" ng-controller="activeController">
             <h4><img src="<?php echo asset('css/logoCC.png') ?>" style="width: 100%"></h4>
             <a ng-class="{
                         active: isActive('/inicio')
@@ -62,14 +72,14 @@
             background-color: #0d77b6;
             cursor: pointer;
             padding: 3px;z-index: 9999999">
-            <i  class="glyphicon glyphicon-th-large"></i>
+            <i  class="glyphicon glyphicon-th-large"></i> MENÚ
         </a>
         <div ng-view="" class="content" >
-
+    
 
         </div>
         <footer style="position: relative; float: bottom;color: #D7D7D7">
-            <p class="text-center"><small>Desarrollado por: <strong>Luis Edier Rosero</strong></small><br>Copyright © 2014 Luis Edier Rosero. Todos los derechos reservados.</p>
+            <p class="text-center"><small>Desarrollado por: <strong>luisedier.rosero@gmail.com</strong></small><br>Copyright © 2014 Luis Edier Rosero. Todos los derechos reservados.</p>
         </footer>
         <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
         <script src="<?php echo asset('t1/js/classie.js') ?>"></script>
@@ -98,7 +108,9 @@
         <script src="<?php echo asset('lib/bt3/js/bootstrap.js') ?>"></script>
         <script src="<?php echo asset('lib/angularjs/angular.js') ?>"></script>
         <script src="<?php echo asset('lib/angularjs/angular-route.js') ?>"></script>
-        <script src="<?php echo asset('app/js/main.js') ?>"></script>
+           <script src="<?php echo asset('lib/angularjs/ng-grid.debug.js') ?>"></script>
+       
+        <script src="<?php echo asset('modules/adminFiesta/main.js') ?>"></script>
 
         <script>
             $(document).ready(function () {
