@@ -1,0 +1,45 @@
+   
+<div class="container">
+
+
+ <h2>Administracion Fiesta</h2>
+ 
+ 
+    <table class="table table-responsive table-striped table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th><input class="form-control input-sm" placeholder="Buscar por nombre" name="nombre" ng-model="elementName"></th>
+                <th><input class="form-control input-sm" placeholder="Buscar por Numero" name="numero" ng-model="elementNo"></th>
+                <th colspan="2">Asisten: {{contAsisten}}  |  No: {{contNo}} <button class="btn btn-xs btn-success" ng-click="actualizarCont()" title="Actualizar Contadores"><i class="glyphicon glyphicon-refresh"></i></button></th>
+               
+            </tr>
+            <tr>
+                <th>#ID</th>
+                <th>Nombre Completo</th>
+                <th>Numero Identificacion</th>
+                <th>Celular</th>
+                <th>Acciones</th>
+            </tr>
+
+        </thead>
+        <tbody  >
+            <tr data-ng-repeat="usuario in usuarios| filter:{nombre_completo:elementName}| filter:{numero_identificacion:elementNo} ">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.nombre_completo}}</td>
+                <td>{{usuario.numero_identificacion}}</td>
+                <td>{{usuario.celular}}</td>
+                <td>
+                    <button ng-click="confirmarInscripcion(usuario.id,usuario.sw_estado,$index)" class="btn btn-xs" ng-class="{'btn-info': usuario.sw_estado == '0','btn-warning':usuario.sw_estado == '1','btn-success':usuario.sw_estado == '2'}" >
+                        {{usuario.sw_estado === "0" ? "Confirmar Asistencia?" : usuario.sw_estado==="1"?"No Asiste":"Asistencia Confirmada"}}
+                    </button>
+                </td>
+            </tr>
+
+           
+        </tbody>
+    </table>
+
+
+
+</div>

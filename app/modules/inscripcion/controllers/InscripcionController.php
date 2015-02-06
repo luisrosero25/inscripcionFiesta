@@ -45,18 +45,20 @@ class InscripcionController extends \BaseController {
         $usuario->email = $request->email;
 
         if ($this->usuarioExiste($request->id_tipo_identificacion->id, $request->numero_identificacion)) {
-            if ($usuario->save() == 1) {
-
-                Mail::send('inscripcion::confirmacionRegistroMail', array('primer_nombre' => $request->primer_nombre, 'primer_apellido' => $request->primer_apellido), function($message) use ($request) {
-                    $message->to($request->email, $request->primer_nombre . ' ' . $request->primer_apellido)->subject('Clinica Colombia ES - Inscripcion Fiesta 2014');
-                });
-
-                return Response::json(array('res' => 'true', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->primer_apellido . '</strong>, registrado correctamente',
-                            'type' => 'success'));
-            } else {
-                return Response::json(array('res' => 'false', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->primer_apellido . '</strong>, Imposible realizar esta accion, vuelva a intentarlo mas tarde',
+//            if ($usuario->save() == 1) {
+//
+//                Mail::send('inscripcion::confirmacionRegistroMail', array('primer_nombre' => $request->primer_nombre, 'primer_apellido' => $request->primer_apellido), function($message) use ($request) {
+//                    $message->to($request->email, $request->primer_nombre . ' ' . $request->primer_apellido)->subject('Clinica Colombia ES - Inscripcion Fiesta 2014');
+//                });
+//
+//                return Response::json(array('res' => 'true', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->primer_apellido . '</strong>, registrado correctamente',
+//                            'type' => 'success'));
+//            } else {
+//                return Response::json(array('res' => 'false', 'msj' => '<strong>' . $request->primer_nombre . ' ' . $request->primer_apellido . '</strong>, Imposible realizar esta accion, vuelva a intentarlo mas tarde',
+//                            'type' => 'danger'));
+//            }
+             return Response::json(array('res' => 'false', 'msj' => '<strong>Advertencia</strong>, Imposible realizar esta accion, las inscripciones se han cerrado',
                             'type' => 'danger'));
-            }
         } else {
 
 

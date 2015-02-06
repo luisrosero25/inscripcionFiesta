@@ -11,6 +11,7 @@ Route::filter('csrf_url', function($route, $request, $segmento) {
 
 
 Route::get('/', ['uses' => 'App\Modules\Inscripcion\Controllers\InscripcionController@index']);
+
 Route::get('bienvenido/{token}', ['before' => 'csrf_url:2', 'uses' => 'App\Modules\Inscripcion\Controllers\InscripcionController@getBienvenido']);
 Route::get('inscripcion/{token}', array('before' => 'csrf_url:2', 'uses' => 'App\Modules\Inscripcion\Controllers\InscripcionController@getFormInscripcion'));
 Route::post('registrar_usuario/{token}', array('before' => 'csrf_url:2', 'uses' => 'App\Modules\Inscripcion\Controllers\InscripcionController@registrarUsuario'));
@@ -43,7 +44,7 @@ Route::get('getViewContadorUsuarios', array('uses' => 'App\Modules\Inscripcion\C
 
 
 Route::get('getContUsuarios', function() {
-    $count = RegistroUsuariosModel::all()->count();
+    $count = RegistroUsuariosModel::where('sw_estado','=','0')->count();
     return Response::json(array(
                 "cont" => $count
     ));
@@ -65,3 +66,10 @@ Route::post('solicitarCancelacion',  array('uses' => 'App\Modules\Inscripcion\Co
 
 Route::get('cancelar/{token}',  array('uses' => 'App\Modules\Inscripcion\Controllers\InscripcionController@cancelarInscripcion'));
 
+Route::get('getViewUbicacion',function(){
+    return View::make('inscripcion::ubicacion');
+});
+
+Route::get('inscripcion2',function(){
+    return View::make('inscripcion::formInscripcion2');
+});
