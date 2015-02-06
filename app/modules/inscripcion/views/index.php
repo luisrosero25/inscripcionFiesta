@@ -62,14 +62,14 @@
             background-color: #0d77b6;
             cursor: pointer;
             padding: 3px;z-index: 9999999">
-            <i  class="glyphicon glyphicon-th-large"></i> MENÚ
+            <i  class="glyphicon glyphicon-th-large"></i>
         </a>
         <div ng-view="" class="content" >
 
 
         </div>
         <footer style="position: relative; float: bottom;color: #D7D7D7">
-            <p class="text-center"><small>Desarrollado por: <strong>luisedier.rosero@gmail.com</strong></small><br>Copyright © 2014 Luis Edier Rosero. Todos los derechos reservados.</p>
+            <p class="text-center"><small>Desarrollado por: <strong>Luis Edier Rosero</strong></small><br>Copyright © 2014 Luis Edier Rosero. Todos los derechos reservados.</p>
         </footer>
         <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
         <script src="<?php echo asset('t1/js/classie.js') ?>"></script>
